@@ -1,3 +1,5 @@
+import Eyebrow from "./Eyebrow";
+
 const FAQS = [
   {
     q: "What is \"SEM,\" really?",
@@ -26,7 +28,7 @@ export default function Faq() {
     <section className="py-24">
       <div className="mx-auto max-w-[1180px] px-8">
         <div className="mb-10 max-w-[56ch]">
-          <div className="mb-3.5 text-[13px] font-semibold text-rose-deep">№ 06 · In plain language</div>
+          <Eyebrow n="06" label="In plain language" />
           <h2 className="font-display text-[30px] font-bold">Questions we get from owners, not marketers</h2>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Eyebrow from "./Eyebrow";
 
 const ITEMS = [
   {
@@ -22,9 +23,7 @@ export default function Problem() {
     <section className="bg-linen-deep py-24">
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-10 px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div>
-          <div className="mb-3.5 text-[13px] font-semibold text-rose-deep">
-            № 01 · The everyday reality
-          </div>
+          <Eyebrow n="01" label="The everyday reality" />
           <h2 className="max-w-[11ch] font-display text-[34px] font-bold leading-tight">
             You didn&apos;t open an inn to become a marketing department
           </h2>

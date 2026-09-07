@@ -1,3 +1,5 @@
+import Eyebrow from "./Eyebrow";
+
 const SERVICES = [
   {
     title: "Email marketing",
@@ -31,7 +33,7 @@ export default function Services() {
     <section id="services" className="bg-linen-deep py-24">
       <div className="mx-auto max-w-[1180px] px-8">
         <div className="mb-11 max-w-[60ch]">
-          <div className="mb-3.5 text-[13px] font-semibold text-rose-deep">№ 04 · Beyond search</div>
+          <Eyebrow n="04" label="Beyond search" />
           <h2 className="font-display text-[30px] font-bold">Everything else runs quietly in the background</h2>
           <p className="mt-3 text-[15.5px] text-ink-soft">
             Search marketing is the core of what we do. These round it out — pick them up whenever you&apos;re ready.

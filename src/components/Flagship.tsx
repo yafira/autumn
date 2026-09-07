@@ -1,3 +1,5 @@
+import Eyebrow from "./Eyebrow";
+
 const TERMS = [
   "We cover the ad spend — you take on no upfront cost.",
   "13% only on the bookings we actually deliver.",
@@ -17,9 +19,7 @@ export default function Flagship() {
             }}
           />
           <div className="relative">
-            <div className="mb-3.5 text-[13px] font-semibold text-rose-deep">
-              № 05 · By invitation, this season
-            </div>
+            <Eyebrow n="05" label="By invitation, this season" />
             <h2 className="max-w-[12ch] font-display text-[32px] font-bold leading-tight sm:text-[36px]">
               The Flagship Program
             </h2>

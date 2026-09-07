@@ -1,4 +1,4 @@
-import SearchMock from "./SearchMock";
+import HeroVisual from "./HeroVisual";
 import RateToggle from "./RateToggle";
 
 export default function Hero() {
@@ -33,7 +33,7 @@ export default function Hero() {
           <RateToggle />
         </div>
 
-        <SearchMock />
+        <HeroVisual />
       </div>
     </section>
   );
