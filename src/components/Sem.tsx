@@ -1,5 +1,5 @@
 import FunnelDiagram from "./FunnelDiagram";
-import PriceCardStack from "./PriceCardStack";
+import SearchMock from "./SearchMock";
 import Eyebrow from "./Eyebrow";
 
 const FEATURES = [
@@ -53,7 +53,7 @@ export default function Sem() {
           </div>
 
           <div className="flex flex-col gap-6">
-            <PriceCardStack />
+            <SearchMock />
             <div className="rounded-sm border border-linen/30 p-6">
               <p className="text-[16.5px] leading-relaxed text-linen">
                 &ldquo;We put our own skin in the game — covering your ad spend, and only getting paid when we deliver bookings.&rdquo;

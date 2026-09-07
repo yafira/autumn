@@ -7,11 +7,13 @@ export default function Counter({
   prefix = "",
   target,
   suffix = "",
+  decimals = 0,
   className = "",
 }: {
   prefix?: string;
   target: number;
   suffix?: string;
+  decimals?: number;
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -23,15 +25,15 @@ export default function Counter({
     const controls = animate(0, target, {
       duration: 0.9,
       ease: [0.16, 1, 0.3, 1],
-      onUpdate: (v) => setValue(Math.round(v)),
+      onUpdate: (v) => setValue(Number(v.toFixed(decimals))),
     });
     return () => controls.stop();
-  }, [inView, target]);
+  }, [inView, target, decimals]);
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {value}
+      {decimals > 0 ? value.toFixed(decimals) : value}
       {suffix}
     </span>
   );
