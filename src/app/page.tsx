@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
+import HotelCarousel from "@/components/HotelCarousel";
 import Problem from "@/components/Problem";
 import Sem from "@/components/Sem";
 import Proof from "@/components/Proof";
@@ -18,7 +18,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Marquee />
+        <HotelCarousel />
         <Problem />
         <Sem />
         <Proof />

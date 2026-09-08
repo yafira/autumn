@@ -1,7 +1,12 @@
+import Reveal from "./Reveal";
+
 export default function FinalCta() {
   return (
     <section className="bg-plum py-16 text-linen">
-      <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-10 px-8">
+      <Reveal
+        y={16}
+        className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-10 px-8"
+      >
         <h2 className="max-w-[14ch] font-display text-[32px] font-bold leading-tight text-linen sm:text-[34px]">
           Let&apos;s get more of your guests booking direct.
         </h2>
@@ -11,7 +16,7 @@ export default function FinalCta() {
         >
           Apply to the Flagship Program
         </a>
-      </div>
+      </Reveal>
     </section>
   );
 }

@@ -13,13 +13,13 @@ export default function Eyebrow({
         dark ? "border-linen/30" : "border-ink/20"
       }`}
     >
-      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dark ? "bg-[#e08fa0]" : "bg-rose"}`} />
+      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dark ? "bg-[#f2a765]" : "bg-rose"}`} />
       <span
         className={`text-[12px] font-semibold tracking-wide ${
           dark ? "text-linen/80" : "text-ink-soft"
         }`}
       >
-        {n} · {label}
+        <span className="font-mono">{n}</span> · {label}
       </span>
     </div>
   );

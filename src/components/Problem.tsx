@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Eyebrow from "./Eyebrow";
+import Reveal from "./Reveal";
 
 const ITEMS = [
   {
@@ -22,12 +23,12 @@ export default function Problem() {
   return (
     <section className="bg-linen-deep py-24">
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-10 px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div>
+        <Reveal>
           <Eyebrow n="01" label="The everyday reality" />
           <h2 className="max-w-[11ch] font-display text-[34px] font-bold leading-tight">
             You didn&apos;t open an inn to become a marketing department
           </h2>
-        </div>
+        </Reveal>
 
         <motion.div
           initial="hidden"

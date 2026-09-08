@@ -7,7 +7,7 @@ export default function RateToggle() {
 
   return (
     <div className="mt-8 border-t border-ink/15 pt-7">
-      <div className="mb-3 text-[12.5px] text-ink-soft">A $220 booking, two ways</div>
+      <div className="mb-3 text-[12.5px] text-ink-soft">A <span className="font-mono">$220</span> booking, two ways</div>
 
       <button
         type="button"
@@ -39,9 +39,9 @@ export default function RateToggle() {
 
       <p className="mt-3 min-h-[18px] text-[13px] text-ink-soft">
         {onOta ? (
-          <>The OTA keeps <b className="text-ink">$44–55</b> — you keep the rest.</>
+          <>The OTA keeps <b className="font-mono text-ink">$44–55</b> — you keep the rest.</>
         ) : (
-          <>You keep <b className="text-ink">$220</b> — the whole booking.</>
+          <>You keep <b className="font-mono text-ink">$220</b> — the whole booking.</>
         )}
       </p>
     </div>

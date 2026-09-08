@@ -1,6 +1,7 @@
 "use client";
 
 import AutumnDashboard from "./AutumnDashboard";
+import FlipReveal from "./FlipReveal";
 import { motion } from "framer-motion";
 
 export default function HeroVisual() {
@@ -12,17 +13,20 @@ export default function HeroVisual() {
         <div className="absolute bottom-0 -left-8 h-48 w-48 rounded-full bg-sage/25 blur-3xl" />
       </div>
 
-      {/* secondary peeking card */}
+      {/* secondary peeking card — styled like a lobby arrivals board */}
       <motion.div
         initial={{ opacity: 0, y: 16, rotate: -8 }}
         whileInView={{ opacity: 1, y: 0, rotate: -6 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute -bottom-14 -left-14 z-0 w-44 rounded-sm border border-ink/15 bg-card p-4 shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)]"
+        className="absolute -bottom-[64px] -left-[84px] z-0 w-36 rounded-sm border border-ink/15 bg-card p-3.5 shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)]"
       >
-        <div className="mb-1.5 text-[11px] text-ink-soft">This week</div>
-        <div className="font-display text-lg font-bold text-plum">14 direct bookings</div>
-        <div className="mt-2.5 flex h-8 items-end gap-1">
+        <div className="mb-1 text-[10.5px] tracking-wide text-ink-soft">THIS WEEK</div>
+        <FlipReveal delay={0.3}>
+          <span className="font-mono text-[32px] leading-none text-plum">14</span>
+        </FlipReveal>
+        <span className="text-[12px] text-ink-soft">direct bookings</span>
+        <div className="mt-3 flex h-8 items-end gap-1">
           {[40, 55, 35, 70, 50, 85, 60].map((h, i) => (
             <span key={i} className="w-full rounded-[1px] bg-rose/60" style={{ height: `${h}%` }} />
           ))}

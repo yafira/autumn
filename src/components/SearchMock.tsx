@@ -92,12 +92,14 @@ export default function SearchMock() {
             revealed >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1.5"
           }`}
         >
-          <div className="h-[38px] w-[38px] shrink-0 rounded-sm bg-gradient-to-br from-[#c98fa0] to-rose-deep" />
+          <div className="h-[38px] w-[38px] shrink-0 rounded-sm bg-gradient-to-br from-[#e8895a] to-rose-deep" />
           <div>
             <span className="rounded-sm border border-plum/35 px-1 text-[10.5px] font-semibold text-plum">
               Maps
             </span>
-            <div className="text-[13.5px] font-semibold">Brass Lantern Inn · 4.9 ★ (312)</div>
+            <div className="text-[13.5px] font-semibold">
+              Brass Lantern Inn · <span className="font-mono">4.9</span> ★ (<span className="font-mono">312</span>)
+            </div>
             <div className="text-[12.5px] text-ink-soft">Open · Stowe, VT</div>
           </div>
         </div>
@@ -112,10 +114,10 @@ export default function SearchMock() {
           </span>
           <div>
             <div className="text-[14.5px] font-semibold text-plum">
-              Brass Lantern Inn — from $189/night
+              Brass Lantern Inn — from <span className="font-mono">$189</span>/night
             </div>
             <div className="mt-0.5 text-[13px] text-ink-soft">
-              Compare rates: Direct $189 · Booking.com $219 · Expedia $224
+              Compare rates: Direct <span className="font-mono">$189</span> · Booking.com <span className="font-mono">$219</span> · Expedia <span className="font-mono">$224</span>
             </div>
           </div>
         </div>

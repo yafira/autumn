@@ -32,11 +32,11 @@ export default function IndexCounter() {
 
   return (
     <div className="fixed bottom-6 left-7 z-[60] hidden items-center gap-2.5 rounded-full border border-ink/15 bg-linen/85 px-3 py-1.5 text-xs text-ink-soft backdrop-blur-sm sm:flex">
-      <span className="font-semibold text-ink">{String(current).padStart(2, "0")}</span>
+      <span className="font-mono font-semibold text-ink">{String(current).padStart(2, "0")}</span>
       <span className="relative h-0.5 w-9 overflow-hidden rounded-full bg-ink/30">
         <motion.span className="absolute inset-y-0 left-0 bg-rose" style={{ scaleX: smooth, transformOrigin: "left" }} />
       </span>
-      <span>{String(total).padStart(2, "0")}</span>
+      <span className="font-mono">{String(total).padStart(2, "0")}</span>
     </div>
   );
 }
