@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HOTELS = [
-  { label: "Historic inn, Stowe VT", src: "https://images.pexels.com/photos/8092379/pexels-photo-8092379.jpeg?auto=compress&cs=tinysrgb&w=900" },
-  { label: "Adobe courtyard, Santa Fe", src: "https://images.pexels.com/photos/34648646/pexels-photo-34648646/free-photo-of-rustic-log-cabin-in-podgaric-croatia.jpeg?auto=compress&cs=tinysrgb&w=900" },
-  { label: "Coastal B&B, Outer Banks", src: "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=900" },
-  { label: "Mountain lodge, Aspen", src: "https://images.pexels.com/photos/3934023/pexels-photo-3934023.jpeg?auto=compress&cs=tinysrgb&w=900" },
-  { label: "Colonial inn, New Orleans", src: "https://images.pexels.com/photos/976919/pexels-photo-976919.jpeg?auto=compress&cs=tinysrgb&w=900" },
-  { label: "Beach house, Montauk", src: "https://images.pexels.com/photos/629168/pexels-photo-629168.jpeg?auto=compress&cs=tinysrgb&w=900" },
+  { label: "Historic inn, Stowe VT", stat: "+22% direct bookings", src: "https://images.pexels.com/photos/8092379/pexels-photo-8092379.jpeg?auto=compress&cs=tinysrgb&w=900" },
+  { label: "Adobe courtyard, Santa Fe", stat: "+15% direct traffic", src: "https://images.pexels.com/photos/34648646/pexels-photo-34648646/free-photo-of-rustic-log-cabin-in-podgaric-croatia.jpeg?auto=compress&cs=tinysrgb&w=900" },
+  { label: "Coastal B&B, Outer Banks", stat: "4.9★ maintained", src: "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=900" },
+  { label: "Mountain lodge, Aspen", stat: "−11% OTA dependence", src: "https://images.pexels.com/photos/3934023/pexels-photo-3934023.jpeg?auto=compress&cs=tinysrgb&w=900" },
+  { label: "Colonial inn, New Orleans", stat: "+19% direct bookings", src: "https://images.pexels.com/photos/976919/pexels-photo-976919.jpeg?auto=compress&cs=tinysrgb&w=900" },
+  { label: "Beach house, Montauk", stat: "5.1x ad spend ROAS", src: "https://images.pexels.com/photos/629168/pexels-photo-629168.jpeg?auto=compress&cs=tinysrgb&w=900" },
 ];
 
 const AUTO_ADVANCE_MS = 4000;
@@ -60,8 +60,16 @@ export default function HotelCarousel() {
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-plum/80 via-plum/10 to-transparent" />
-              <div className="absolute bottom-5 left-6 font-display text-[22px] text-linen sm:text-[26px]">
-                {hotel.label}
+              <div className="absolute right-6 bottom-11 left-6 flex flex-wrap items-end justify-between gap-3">
+                <div className="font-display text-[22px] text-linen sm:text-[26px]">{hotel.label}</div>
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.25 }}
+                  className="rounded-sm border border-linen/30 bg-linen/15 px-2.5 py-1 font-mono text-[13px] text-linen backdrop-blur-sm"
+                >
+                  {hotel.stat}
+                </motion.div>
               </div>
             </motion.div>
           </AnimatePresence>

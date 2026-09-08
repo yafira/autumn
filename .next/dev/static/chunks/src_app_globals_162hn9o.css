@@ -494,6 +494,10 @@
     bottom: calc(var(--spacing) * 6);
   }
 
+  .bottom-11 {
+    bottom: calc(var(--spacing) * 11);
+  }
+
   .-left-2\.5 {
     left: calc(var(--spacing) * -2.5);
   }

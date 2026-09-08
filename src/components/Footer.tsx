@@ -1,14 +1,22 @@
+"use client";
+
+import Link from "next/link";
 import LeafMark from "./LeafMark";
 
 export default function Footer() {
+  function handleLogoClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <footer id="careers" className="py-14">
       <div className="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-10 px-8">
         <div>
-          <div className="mb-2.5 flex items-center gap-2 text-ink">
+          <Link href="/" onClick={handleLogoClick} className="mb-2.5 flex items-center gap-2 text-ink">
             <LeafMark className="h-5 w-5" />
             <span className="font-display text-2xl font-bold uppercase tracking-wide">Autumn</span>
-          </div>
+          </Link>
           <p className="max-w-[34ch] text-[13.5px] text-ink-soft">
             AI-enabled marketing for independent inns, B&amp;Bs and boutique hotels — built by people who know hospitality.
           </p>

@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import LeafMark from "./LeafMark";
 
 const LINKS = [
@@ -9,13 +12,18 @@ const LINKS = [
 ];
 
 export default function Header() {
+  function handleLogoClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-ink/15 bg-linen/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between px-8 py-4.5">
-        <div className="flex items-center gap-2 text-ink">
+        <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 text-ink">
           <LeafMark className="h-5 w-5" />
           <span className="font-display text-2xl font-bold uppercase tracking-wide">Autumn</span>
-        </div>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
