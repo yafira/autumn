@@ -9,12 +9,10 @@ import Flagship from "@/components/Flagship";
 import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
-import IndexCounter from "@/components/IndexCounter";
 
 export default function Home() {
   return (
     <>
-      <IndexCounter />
       <Header />
       <main>
         <Hero />

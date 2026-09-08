@@ -43,6 +43,12 @@ export default function Services() {
           <p className="mt-3 text-[15.5px] text-ink-soft">
             Search marketing is the core of what we do. These round it out — pick them up whenever you&apos;re ready.
           </p>
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-ink/20 px-3 py-1">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-sage" />
+            <span className="text-[12px] font-semibold tracking-wide text-ink-soft">
+              AI drafts everything. A person approves before it goes out.
+            </span>
+          </div>
         </Reveal>
 
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.05fr_0.95fr]">

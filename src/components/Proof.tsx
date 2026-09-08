@@ -30,8 +30,16 @@ export default function Proof() {
         <div className="grid grid-cols-1 gap-7 lg:grid-cols-[1.15fr_0.85fr]">
           <Reveal
             delay={0.1}
-            className="flex flex-col gap-5.5 rounded-sm border border-ink/15 bg-card p-9 transition-transform duration-300 hover:-translate-y-1"
+            className="relative flex flex-col gap-5.5 overflow-hidden rounded-sm border border-ink/15 bg-card p-9 transition-transform duration-300 hover:-translate-y-1"
           >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-multiply"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+              }}
+            />
             <div className="flex items-center gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element -- external stock photo, browser-fetched to avoid Pexels' CDN blocking Next's server-side image proxy */}
               <img
