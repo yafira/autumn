@@ -24,7 +24,7 @@ export default function HeroVisual() {
   const quote = useReveal();
 
   return (
-    <div className="relative mb-[220px] ml-6">
+    <div className="relative mb-10 ml-6 sm:mb-[220px]">
       {/* soft gradient-mesh backdrop */}
       <div className="pointer-events-none absolute -inset-10 -z-10">
         <div className="absolute -top-6 -right-6 h-56 w-56 rounded-full bg-rose/25 blur-3xl" />
@@ -39,19 +39,31 @@ export default function HeroVisual() {
         initial={{ opacity: 0, y: 16, rotate: -8 }}
         whileInView={{ opacity: 1, y: 0, rotate: -6 }}
         viewport={{ once: true }}
-        animate={peek.active ? { x: -34, y: 22, scale: 1.05, rotate: -3 } : { x: 0, y: 0, scale: 1 }}
+        animate={
+          peek.active
+            ? { x: -34, y: 22, scale: 1.05, rotate: -3 }
+            : { x: 0, y: 0, scale: 1 }
+        }
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         style={{ zIndex: peek.active ? 30 : 0 }}
-        className="absolute -bottom-[64px] -left-[84px] w-36 cursor-pointer rounded-sm border border-ink/15 bg-card p-3.5 text-left shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)]"
+        className="absolute -bottom-[64px] -left-[84px] hidden w-36 cursor-pointer rounded-sm border border-ink/15 bg-card p-3.5 text-left shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)] sm:block"
       >
-        <div className="mb-1 text-[10.5px] tracking-wide text-ink-soft">THIS WEEK</div>
+        <div className="mb-1 text-[10.5px] tracking-wide text-ink-soft">
+          THIS WEEK
+        </div>
         <FlipReveal delay={0.3}>
-          <span className="font-mono text-[32px] leading-none text-plum">14</span>
+          <span className="font-mono text-[32px] leading-none text-plum">
+            14
+          </span>
         </FlipReveal>
         <span className="text-[12px] text-ink-soft">direct bookings</span>
         <div className="mt-3 flex h-8 items-end gap-1">
           {[40, 55, 35, 70, 50, 85, 60].map((h, i) => (
-            <span key={i} className="w-full rounded-[1px] bg-rose/60" style={{ height: `${h}%` }} />
+            <span
+              key={i}
+              className="w-full rounded-[1px] bg-rose/60"
+              style={{ height: `${h}%` }}
+            />
           ))}
         </div>
       </motion.button>
@@ -63,8 +75,16 @@ export default function HeroVisual() {
         initial={{ opacity: 0, y: 16, rotate: 6 }}
         whileInView={{ opacity: 1, y: 0, rotate: 4 }}
         viewport={{ once: true }}
-        animate={quote.active ? { x: 34, y: 20, scale: 1.05, rotate: 2 } : { x: 0, y: 0, scale: 1 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1], delay: quote.active ? 0 : 0.15 }}
+        animate={
+          quote.active
+            ? { x: 34, y: 20, scale: 1.05, rotate: 2 }
+            : { x: 0, y: 0, scale: 1 }
+        }
+        transition={{
+          duration: 0.4,
+          ease: [0.16, 1, 0.3, 1],
+          delay: quote.active ? 0 : 0.15,
+        }}
         style={{ zIndex: quote.active ? 30 : 0 }}
         className="absolute -bottom-28 right-2 hidden w-52 cursor-pointer rounded-sm border border-ink/15 bg-card p-4 text-left shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)] sm:block"
       >
@@ -79,7 +99,9 @@ export default function HeroVisual() {
             alt=""
             className="h-6 w-6 rounded-full object-cover"
           />
-          <span className="text-[11.5px] text-ink-soft">Don, Brass Lantern Inn</span>
+          <span className="text-[11.5px] text-ink-soft">
+            Don, Brass Lantern Inn
+          </span>
         </div>
       </motion.button>
 

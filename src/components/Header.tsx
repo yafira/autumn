@@ -20,9 +20,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/15 bg-linen/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between px-8 py-4.5">
-        <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2 text-ink">
+        <Link
+          href="/"
+          onClick={handleLogoClick}
+          className="flex items-center gap-2 text-ink"
+        >
           <LeafMark className="h-5 w-5" />
-          <span className="font-display text-2xl font-bold uppercase tracking-wide">Autumn</span>
+          <span className="font-display text-2xl font-bold uppercase tracking-wide">
+            Autumn
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -39,9 +45,10 @@ export default function Header() {
 
         <a
           href="#flagship"
-          className="rounded-sm bg-plum px-6 py-3 text-[15px] font-semibold text-linen transition-transform duration-100 hover:bg-plum-deep active:scale-95"
+          className="shrink-0 rounded-sm bg-plum px-4 py-2.5 text-[13.5px] font-semibold whitespace-nowrap text-linen transition-transform duration-100 hover:bg-plum-deep active:scale-95 sm:px-6 sm:py-3 sm:text-[15px]"
         >
-          Get your free growth plan
+          <span className="sm:hidden">Get started</span>
+          <span className="hidden sm:inline">Get your free growth plan</span>
         </a>
       </div>
     </header>
