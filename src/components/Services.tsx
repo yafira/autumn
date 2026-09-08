@@ -39,7 +39,7 @@ export default function Services() {
       <div className="mx-auto max-w-[1180px] px-8">
         <Reveal className="mb-11 max-w-[60ch]">
           <Eyebrow n="04" label="Beyond search" />
-          <h2 className="font-display text-[30px] font-bold">Everything else runs quietly in the background</h2>
+          <h2 className="max-w-[430px] font-display text-[34px] font-bold leading-tight">Everything else runs quietly in the background</h2>
           <p className="mt-3 text-[15.5px] text-ink-soft">
             Search marketing is the core of what we do. These round it out — pick them up whenever you&apos;re ready.
           </p>

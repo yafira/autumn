@@ -25,7 +25,7 @@ export default function Problem() {
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-10 px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <Reveal>
           <Eyebrow n="01" label="The everyday reality" />
-          <h2 className="max-w-[11ch] font-display text-[34px] font-bold leading-tight">
+          <h2 className="font-display text-[34px] font-bold leading-tight">
             You didn&apos;t open an inn to become a marketing department
           </h2>
         </Reveal>

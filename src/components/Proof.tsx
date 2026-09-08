@@ -7,7 +7,7 @@ export default function Proof() {
         <Reveal className="mb-13 flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <div>
             <div className="mb-3.5 text-[13px] font-semibold text-rose-deep">№ 03 · Results</div>
-            <h2 className="max-w-[13ch] font-display text-[34px] font-bold leading-tight">
+            <h2 className="max-w-[20ch] font-display text-[34px] font-bold leading-tight">
               Independent hotels, measurably busier
             </h2>
           </div>

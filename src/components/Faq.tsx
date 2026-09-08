@@ -36,7 +36,7 @@ export default function Faq() {
       <div className="mx-auto max-w-[1180px] px-8">
         <Reveal className="mb-10 max-w-[56ch]">
           <Eyebrow n="06" label="In plain language" />
-          <h2 className="font-display text-[30px] font-bold">Questions we get from owners, not marketers</h2>
+          <h2 className="max-w-[24ch] font-display text-[34px] font-bold leading-tight">Questions we get from owners, not marketers</h2>
         </Reveal>
 
         <div className="border-t border-ink/15">
