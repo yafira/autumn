@@ -11,6 +11,7 @@ export default function HeroVisual() {
       <div className="pointer-events-none absolute -inset-10 -z-10">
         <div className="absolute -top-6 -right-6 h-56 w-56 rounded-full bg-rose/25 blur-3xl" />
         <div className="absolute bottom-0 -left-8 h-48 w-48 rounded-full bg-sage/25 blur-3xl" />
+        <div className="absolute top-1/3 left-1/3 h-40 w-40 rounded-full bg-gold/30 blur-3xl" />
       </div>
 
       {/* secondary peeking card — styled like a lobby arrivals board */}

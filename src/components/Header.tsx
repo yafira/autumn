@@ -1,3 +1,5 @@
+import LeafMark from "./LeafMark";
+
 const LINKS = [
   { href: "#sem", label: "Search Marketing" },
   { href: "#proof", label: "Results" },
@@ -10,7 +12,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/15 bg-linen/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between px-8 py-4.5">
-        <div className="font-display text-2xl font-bold uppercase tracking-wide">Autumn</div>
+        <div className="flex items-center gap-2 text-ink">
+          <LeafMark className="h-5 w-5" />
+          <span className="font-display text-2xl font-bold uppercase tracking-wide">Autumn</span>
+        </div>
 
         <nav className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
