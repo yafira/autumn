@@ -25,28 +25,48 @@ export default function Flagship() {
           />
           <div className="relative">
             <Eyebrow n="05" label="By invitation, this season" />
-            <h2 className="max-w-[12ch] font-display text-[32px] font-bold leading-tight sm:text-[36px]">
+            <h2 className="font-display text-[32px] font-bold leading-tight sm:text-[36px]">
               The Flagship Program
             </h2>
             <p className="mt-4.5 max-w-[48ch] text-base leading-relaxed text-ink-soft">
-              A risk-free way to trial Autumn&apos;s search marketing on your own property. No fixed fees, no long contract — we take 13% of the bookings we drive, and nothing when we don&apos;t.
+              A risk-free way to trial Autumn&apos;s search marketing on your
+              own property. No fixed fees, no long contract — we take 13% of the
+              bookings we drive, and nothing when we don&apos;t.
             </p>
             <motion.div
               className="mt-7 flex flex-col gap-3.5"
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.1 } },
+              }}
             >
               {TERMS.map((t) => (
                 <motion.div
                   key={t}
-                  variants={{ hidden: { opacity: 0, x: -10 }, show: { opacity: 1, x: 0 } }}
+                  variants={{
+                    hidden: { opacity: 0, x: -10 },
+                    show: { opacity: 1, x: 0 },
+                  }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   className="flex items-start gap-3 text-[14.5px]"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0">
-                    <path d="M4 12l5 5 11-11" stroke="#a8461f" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="mt-0.5 shrink-0"
+                  >
+                    <path
+                      d="M4 12l5 5 11-11"
+                      stroke="#a8461f"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                   <span>{t}</span>
                 </motion.div>
@@ -63,8 +83,12 @@ export default function Flagship() {
             />
             <div className="absolute inset-0 bg-plum/60" />
             <div className="relative">
-              <div className="mb-2.5 text-[13px] text-linen/70">Winter cohort — limited spots</div>
-              <h3 className="mb-5 font-display text-2xl font-bold">Tell us about your property</h3>
+              <div className="mb-2.5 text-[13px] text-linen/70">
+                Winter cohort — limited spots
+              </div>
+              <h3 className="mb-5 font-display text-2xl font-bold">
+                Tell us about your property
+              </h3>
               <BellButton
                 href="mailto:hello@autumnplatform.com?subject=Flagship%20Program%20application"
                 className="flex w-full items-center justify-center gap-2.5 rounded-sm bg-rose px-6 py-3.5 text-[15px] font-semibold text-white transition-transform duration-100 hover:bg-rose-deep active:scale-95"
@@ -72,7 +96,8 @@ export default function Flagship() {
                 Apply for the Flagship Program
               </BellButton>
               <p className="mt-4 text-xs leading-relaxed text-linen/55">
-                Takes about 4 minutes. We reply personally within 2 business days — no auto-drip sequence.
+                Takes about 4 minutes. We reply personally within 2 business
+                days — no auto-drip sequence.
               </p>
             </div>
           </div>
