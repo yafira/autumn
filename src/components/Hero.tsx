@@ -3,8 +3,8 @@ import RateToggle from "./RateToggle";
 
 export default function Hero() {
   return (
-    <section className="pt-19 pb-16">
-      <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-16 px-8 lg:grid-cols-[1.05fr_0.95fr]">
+    <section className="pt-19 pb-10">
+      <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-start gap-16 px-8 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <h1 className="max-w-[12ch] font-display text-[40px] font-bold leading-[1.05] tracking-tight sm:text-[52px] lg:text-[60px]">
             Turn search into your #1 booking channel
