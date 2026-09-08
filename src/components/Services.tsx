@@ -47,21 +47,26 @@ export default function Services() {
 
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div
-            className="border-t border-ink/15"
+            className="relative border-l-2 border-ink/15 pl-9"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
           >
-            {SERVICES.map((s) => (
+            {SERVICES.map((s, i) => (
               <motion.div
                 key={s.title}
                 variants={{ hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0 } }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="border-b border-ink/15 py-6 transition-colors duration-200 hover:bg-linen/60"
+                className={`group relative transition-transform duration-300 ease-out hover:translate-x-1.5 ${
+                  i === 0 ? "pb-10" : i === SERVICES.length - 1 ? "pt-10" : "py-10"
+                }`}
               >
-                <div className="mb-1.5 flex items-center justify-between gap-4">
-                  <h3 className="text-[18px] font-semibold">{s.title}</h3>
+                <span className="absolute top-1.5 -left-[41px] h-3 w-3 rounded-full bg-ink/25 ring-4 ring-linen-deep transition-all duration-300 group-hover:scale-125 group-hover:bg-rose" />
+                <div className="mb-2 flex items-center justify-between gap-4">
+                  <h3 className="text-[18px] font-semibold transition-colors duration-300 group-hover:text-rose-deep">
+                    {s.title}
+                  </h3>
                   <div className="text-[12px] font-semibold text-rose-deep">{s.tag}</div>
                 </div>
                 <p className="max-w-[52ch] text-sm text-ink-soft">{s.body}</p>
