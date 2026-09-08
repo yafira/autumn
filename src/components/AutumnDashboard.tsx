@@ -4,48 +4,33 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Counter from "./Counter";
 
-const TABS = ["Overview", "Campaigns", "Channels", "Reports"];
-
 export default function AutumnDashboard() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "0px 0px -10% 0px" });
 
   return (
-    <div ref={ref} className="rounded-sm border border-ink/15 bg-card p-5">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <span className="font-display text-[15px] font-bold uppercase tracking-wide">Autumn</span>
-          <span className="text-[13px] text-ink-soft">Marketing</span>
-        </div>
-        <div className="flex gap-4 text-[12.5px] text-ink-soft">
-          {TABS.map((t, i) => (
-            <span
-              key={t}
-              className={i === 0 ? "border-b-2 border-rose pb-1 font-semibold text-ink" : ""}
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+    <div ref={ref} className="rounded-sm border border-ink/15 bg-card p-6">
+      <div className="mb-6 font-display text-[15px] font-semibold text-ink-soft">
+        Your search campaign, this month
       </div>
 
       <div className="mb-7 grid grid-cols-3 gap-4">
         <div>
-          <div className="mb-1 text-[10.5px] tracking-wide text-ink-soft">DIRECT REVENUE</div>
+          <div className="mb-1 text-[12px] text-ink-soft">Direct revenue</div>
           <div className="font-display text-2xl font-bold text-ink">
             $<Counter target={248} suffix="K" />
           </div>
           <div className="mt-0.5 text-[11px] font-semibold text-sage">+12%</div>
         </div>
         <div>
-          <div className="mb-1 text-[10.5px] tracking-wide text-ink-soft">DIRECT BOOKINGS</div>
+          <div className="mb-1 text-[12px] text-ink-soft">Direct bookings</div>
           <div className="font-display text-2xl font-bold text-ink">
             <Counter target={312} />
           </div>
           <div className="mt-0.5 text-[11px] font-semibold text-sage">+18%</div>
         </div>
         <div>
-          <div className="mb-1 text-[10.5px] tracking-wide text-ink-soft">ROAS</div>
+          <div className="mb-1 text-[12px] text-ink-soft">Ad spend ROAS</div>
           <div className="font-display text-2xl font-bold text-ink">
             <Counter target={5.2} decimals={1} suffix="x" />
           </div>

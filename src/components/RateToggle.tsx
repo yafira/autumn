@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function RateToggle() {
   const [onOta, setOnOta] = useState(false);
@@ -17,12 +16,10 @@ export default function RateToggle() {
         aria-label="Toggle between direct booking and OTA outcome"
         className="relative flex h-[46px] w-full max-w-[320px] rounded-sm border border-ink/30 bg-linen-deep"
       >
-        <motion.div
-          className={`absolute top-0.5 bottom-0.5 left-0.5 w-[calc(50%-2px)] rounded-[2px] ${
-            onOta ? "bg-rose" : "bg-plum"
+        <div
+          className={`absolute top-0.5 bottom-0.5 left-0.5 w-[calc(50%-2px)] rounded-[2px] transition-transform duration-300 ease-out ${
+            onOta ? "translate-x-full bg-rose" : "translate-x-0 bg-plum"
           }`}
-          animate={{ x: onOta ? "100%" : "0%" }}
-          transition={{ type: "spring", stiffness: 400, damping: 32 }}
         />
         <span
           className={`relative z-10 flex flex-1 items-center justify-center text-[13px] font-semibold transition-colors duration-200 ${

@@ -1,5 +1,3 @@
-import Counter from "./Counter";
-
 export default function Proof() {
   return (
     <section id="proof" className="py-24">
@@ -13,15 +11,15 @@ export default function Proof() {
           </div>
           <div className="flex gap-10">
             <div>
-              <Counter prefix="+" target={17} suffix="%" className="font-display text-[42px] font-bold text-sage" />
+              <div className="font-display text-[42px] font-bold text-sage">+17%</div>
               <div className="mt-1 max-w-[16ch] text-[12.5px] text-ink-soft">avg. direct traffic in 90 days</div>
             </div>
             <div>
-              <Counter target={4} suffix="x" className="font-display text-[42px] font-bold text-sage" />
+              <div className="font-display text-[42px] font-bold text-sage">4x</div>
               <div className="mt-1 max-w-[16ch] text-[12.5px] text-ink-soft">website conversion vs. category norm</div>
             </div>
             <div>
-              <Counter target={13} suffix="%" className="font-display text-[42px] font-bold text-sage" />
+              <div className="font-display text-[42px] font-bold text-sage">13%</div>
               <div className="mt-1 max-w-[16ch] text-[12.5px] text-ink-soft">only paid on bookings we drive</div>
             </div>
           </div>
