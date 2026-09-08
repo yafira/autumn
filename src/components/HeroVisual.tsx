@@ -1,10 +1,28 @@
 "use client";
 
+import { useState } from "react";
 import AutumnDashboard from "./AutumnDashboard";
 import FlipReveal from "./FlipReveal";
 import { motion } from "framer-motion";
 
+function useReveal() {
+  const [pinned, setPinned] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const active = pinned || hovered;
+  return {
+    active,
+    handlers: {
+      onMouseEnter: () => setHovered(true),
+      onMouseLeave: () => setHovered(false),
+      onClick: () => setPinned((v) => !v),
+    },
+  };
+}
+
 export default function HeroVisual() {
+  const peek = useReveal();
+  const quote = useReveal();
+
   return (
     <div className="relative mb-[220px] ml-6">
       {/* soft gradient-mesh backdrop */}
@@ -14,13 +32,17 @@ export default function HeroVisual() {
         <div className="absolute top-1/3 left-1/3 h-40 w-40 rounded-full bg-gold/30 blur-3xl" />
       </div>
 
-      {/* secondary peeking card — styled like a lobby arrivals board */}
-      <motion.div
+      {/* secondary peeking card — styled like a lobby arrivals board. Click or hover to see it fully. */}
+      <motion.button
+        type="button"
+        {...peek.handlers}
         initial={{ opacity: 0, y: 16, rotate: -8 }}
         whileInView={{ opacity: 1, y: 0, rotate: -6 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute -bottom-[64px] -left-[84px] z-0 w-36 rounded-sm border border-ink/15 bg-card p-3.5 shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)]"
+        animate={peek.active ? { x: -34, y: 22, scale: 1.05, rotate: -3 } : { x: 0, y: 0, scale: 1 }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        style={{ zIndex: peek.active ? 30 : 0 }}
+        className="absolute -bottom-[64px] -left-[84px] w-36 cursor-pointer rounded-sm border border-ink/15 bg-card p-3.5 text-left shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)]"
       >
         <div className="mb-1 text-[10.5px] tracking-wide text-ink-soft">THIS WEEK</div>
         <FlipReveal delay={0.3}>
@@ -32,15 +54,19 @@ export default function HeroVisual() {
             <span key={i} className="w-full rounded-[1px] bg-rose/60" style={{ height: `${h}%` }} />
           ))}
         </div>
-      </motion.div>
+      </motion.button>
 
-      {/* testimonial teaser — foreshadows the case study further down */}
-      <motion.div
+      {/* testimonial teaser — foreshadows the case study further down. Click or hover to see it fully. */}
+      <motion.button
+        type="button"
+        {...quote.handlers}
         initial={{ opacity: 0, y: 16, rotate: 6 }}
         whileInView={{ opacity: 1, y: 0, rotate: 4 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute -bottom-28 right-2 z-0 hidden w-52 rounded-sm border border-ink/15 bg-card p-4 shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)] sm:block"
+        animate={quote.active ? { x: 34, y: 20, scale: 1.05, rotate: 2 } : { x: 0, y: 0, scale: 1 }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1], delay: quote.active ? 0 : 0.15 }}
+        style={{ zIndex: quote.active ? 30 : 0 }}
+        className="absolute -bottom-28 right-2 hidden w-52 cursor-pointer rounded-sm border border-ink/15 bg-card p-4 text-left shadow-[0_25px_50px_-20px_rgba(43,32,41,0.35)] sm:block"
       >
         <div className="mb-1.5 text-rose text-[13px] tracking-wide">★★★★★</div>
         <p className="font-display text-[15px] leading-snug text-ink">
@@ -55,7 +81,7 @@ export default function HeroVisual() {
           />
           <span className="text-[11.5px] text-ink-soft">Don, Brass Lantern Inn</span>
         </div>
-      </motion.div>
+      </motion.button>
 
       {/* main card with corner brackets */}
       <div className="relative z-10 shadow-[0_30px_60px_-25px_rgba(43,32,41,0.3)]">
